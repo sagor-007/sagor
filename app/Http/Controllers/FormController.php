@@ -50,7 +50,7 @@ class FormController extends Controller
                                 
                                     $users = DB::table('student_list')
                                         ->where('id', $id)
-                                        ->update([        'name' => $request->name,
+                                        ->update([          'name' => $request->name,
                                                             'season' => $request->season,
                                                             'semester' => $request->semester,
                                                             'email' => $request->email,
@@ -61,12 +61,10 @@ class FormController extends Controller
 
 
                                 public function delete ($id){ 
-                                    DB::table('student_list')->delete();
-
-                                    DB::table('student_list')->where('id', '>', 10)->delete();
+                                    $users=FormModel::find($id);
+                                    $users->delete();
                                 
-                                    return redirect('Form/listshow');
-                                                            
+                                    return redirect('Form/listshow');                  
                                 }
 
 

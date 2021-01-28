@@ -6,6 +6,6 @@ use Illuminate\Database\Eloquent\Model;
 
 class FormModel extends Model
 {
-    protected $table = 'about';
+    protected $table = 'student_list';
     protected $fillable = ['id'];
 }
